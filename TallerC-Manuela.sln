@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallerManuelaC", "TallerManuelaC.csproj", "{A53DD590-358F-D1DD-18CB-27F4B60DEC2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallerArreglos", "TallerArreglos.csproj", "{42ECF068-96A3-0650-FAC0-565C24DBAD37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,15 +10,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A53DD590-358F-D1DD-18CB-27F4B60DEC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A53DD590-358F-D1DD-18CB-27F4B60DEC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A53DD590-358F-D1DD-18CB-27F4B60DEC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A53DD590-358F-D1DD-18CB-27F4B60DEC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42ECF068-96A3-0650-FAC0-565C24DBAD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42ECF068-96A3-0650-FAC0-565C24DBAD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42ECF068-96A3-0650-FAC0-565C24DBAD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42ECF068-96A3-0650-FAC0-565C24DBAD37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5883F9EC-ECB1-41A6-9CE2-AE62139E40BC}
+		SolutionGuid = {5437A08A-6A85-45F4-B0F6-C5EE8F19C223}
 	EndGlobalSection
 EndGlobal

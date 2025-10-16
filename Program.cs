@@ -36,13 +36,13 @@ class Program
                 else
                 {
                     Console.WriteLine("Opción inválida. Presione cualquier tecla para continuar...");
-                    Console.ReadKey();
+                    Console.ReadLine();
                 }
             }
             else
             {
                 Console.WriteLine("Entrada inválida. Presione cualquier tecla para continuar...");
-                Console.ReadKey();
+                Console.ReadLine();
             }
         }
     }
@@ -77,7 +77,7 @@ class Program
         }
         
         Console.WriteLine("\nPresione cualquier tecla para continuar...");
-        Console.ReadKey();
+        Console.ReadLine();
     }
 
     // ==================== EJERCICIO 1 ====================
