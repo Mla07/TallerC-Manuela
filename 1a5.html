@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagramas de Clases - Taller POO (1–5)</title>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'default' });
+</script>
+<style>
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f6f8fa;
+  padding: 2rem;
+}
+h1, h2 {
+  color: #2b3a67;
+  text-align: center;
+}
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+.mermaid {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+}
+</style>
+</head>
+<body>
+<h1>Diagramas de Clases UML – Taller POO (Ejercicios 1–5)</h1>
+
+<section>
+  <h2>1–2) Clase <em>Persona</em> (Propiedades y Constructor)</h2>
+  <div class="mermaid">
+classDiagram
+    class Persona {
+        - string nombre
+        - int edad
+        + Persona()
+        + Persona(string nombre, int edad)
+        + void Saludar()
+    }
+  </div>
+  <p><strong>Descripción:</strong> La clase <code>Persona</code> modela un individuo con nombre y edad, y un método que imprime un saludo. Se incluyen dos constructores: uno vacío y otro con parámetros.</p>
+</section>
+
+<section>
+  <h2>3–4) Persona con Encapsulamiento y Propiedad Calculada</h2>
+  <div class="mermaid">
+classDiagram
+    class Persona {
+        - int edad
+        + string Nombre
+        + int Edad
+        + bool EsMayorDeEdad
+        + void Saludar()
+    }
+  </div>
+  <p><strong>Notas UML:</strong> <code>Edad</code> aplica validación (0–120). <code>EsMayorDeEdad</code> es una propiedad calculada: retorna <code>true</code> si la edad ≥ 18.</p>
+</section>
+
+<section>
+  <h2>5) Clase <em>CalculadoraBasica</em></h2>
+  <div class="mermaid">
+classDiagram
+    class CalculadoraBasica {
+        + static int ConteoOperaciones
+        + double Sumar(double a, double b)
+        + double Restar(double a, double b)
+        + double Multiplicar(double a, double b)
+        + double Dividir(double a, double b)
+    }
+  </div>
+  <p><strong>Descripción:</strong> Clase con métodos aritméticos básicos. Cada operación incrementa un contador estático <code>ConteoOperaciones</code>.</p>
+</section>
+
+</body>
+</html>

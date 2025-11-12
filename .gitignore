@@ -1,2 +1,89 @@
-obj
-bin*
+# ===============================
+# .NET / C# / VSCode Git Ignore
+# Project: TallerPOO
+# ===============================
+
+# Build results
+/bin/
+/obj/
+/out/
+/Debug/
+/Release/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Logs and temporary
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# .NET specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.ide/
+*.generated.cs
+*.g.cs
+
+# NuGet packages
+*.nupkg
+*.snupkg
+# Package folders
+packages/
+# Exclude NuGet config files
+!nuget.config
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Test results
+TestResult.xml
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Cache
+_ReSharper*/
+*.Cache
+*.dbmdl
+*.dbproj.schemaview
+*.pdb
+*.mdb
+
+# Backup & publish artifacts
+publish/
+*.Publish.xml
+*.publishproj
+
+# T4 generated files
+*.Generated.cs
+
+# Optional: ignore any local scripts or zipped copies
+*.zip
+*.sh
+*.bat
+local_*

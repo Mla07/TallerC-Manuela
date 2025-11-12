@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagramas de Clases - Taller POO (11–15)</title>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'default' });
+</script>
+<style>
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f6f8fa;
+  padding: 2rem;
+}
+h1, h2 {
+  color: #2b3a67;
+  text-align: center;
+}
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+.mermaid {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+}
+</style>
+</head>
+<body>
+<h1>Diagramas de Clases UML – Taller POO (Ejercicios 11–15)</h1>
+
+<!-- Ejercicio 11 -->
+<section>
+  <h2>11) Agenda y Contacto</h2>
+  <div class="mermaid">
+classDiagram
+    class Agenda {
+        - List~Contacto~ contactos
+        + void Agregar(Contacto c)
+        + Contacto BuscarPorNombre(string nombre)
+        + void Listar()
+    }
+
+    class Contacto {
+        - string telefono
+        + string Nombre
+        + string Telefono
+        + Contacto(string nombre, string telefono)
+    }
+
+    Agenda *-- Contacto : contiene >
+  </div>
+  <p><strong>Relación:</strong> <em>Agenda</em> tiene una relación de <strong>composición</strong> con <em>Contacto</em> (una agenda contiene muchos contactos).  
+  <strong>Validación:</strong> <code>Telefono</code> solo acepta dígitos entre 7 y 15 caracteres.</p>
+</section>
+
+<!-- Ejercicio 12 -->
+<section>
+  <h2>12) Asignatura y Notas</h2>
+  <div class="mermaid">
+classDiagram
+    class Asignatura {
+        + string Nombre
+        + double[] Notas
+        + double Promedio()
+    }
+  </div>
+  <p><strong>Concepto:</strong> <em>Asignatura</em> modela una materia con un arreglo de notas (0–5).  
+  El método <code>Promedio()</code> calcula el promedio y valida los rangos de las notas.</p>
+</section>
+
+<!-- Ejercicio 13 -->
+<section>
+  <h2>13) Inventario: Producto e InventarioItem</h2>
+  <div class="mermaid">
+classDiagram
+    class Producto {
+        - double precio
+        + string Nombre
+        + double Precio
+    }
+
+    class InventarioItem {
+        + Producto Producto
+        + int Stock
+        + InventarioItem(Producto p, int stockInicial)
+        + void Entrar(int cantidad)
+        + bool Salir(int cantidad)
+    }
+
+    InventarioItem *-- Producto : asocia >
+  </div>
+  <p><strong>Relación:</strong> <em>InventarioItem</em> tiene una <strong>composición</strong> con <em>Producto</em>.  
+  Controla el stock e impide cantidades negativas.</p>
+</section>
+
+<!-- Ejercicio 14 -->
+<section>
+  <h2>14) Envío de Notificaciones (Uso de Interfaces)</h2>
+  <div class="mermaid">
+classDiagram
+    class INotificable {
+        <<interface>>
+        + void Enviar(string mensaje)
+    }
+
+    class NotificadorEmail {
+        + void Enviar(string mensaje)
+    }
+
+    class NotificadorSms {
+        + void Enviar(string mensaje)
+    }
+
+    INotificable <|.. NotificadorEmail
+    INotificable <|.. NotificadorSms
+  </div>
+  <p><strong>Concepto:</strong> Muestra el uso del <strong>polimorfismo por interfaz</strong>.  
+  Ambas clases implementan el mismo contrato y se pueden usar indistintamente donde se requiera un <code>INotificable</code>.</p>
+</section>
+
+<!-- Ejercicio 15 -->
+<section>
+  <h2>15) Reporte de Figuras (Herencia Abstracta)</h2>
+  <div class="mermaid">
+classDiagram
+    class Figura {
+        <<abstract>>
+        + double Area()
+        + void MostrarArea()
+    }
+
+    class Circulo {
+        + double Radio
+        + double Area()
+    }
+
+    class Rectangulo {
+        + double Ancho
+        + double Alto
+        + double Area()
+    }
+
+    Figura <|-- Circulo
+    Figura <|-- Rectangulo
+  </div>
+  <p><strong>Concepto:</strong> <em>Figura</em> actúa como clase abstracta.  
+  Las subclases <em>Círculo</em> y <em>Rectángulo</em> implementan el método <code>Area()</code> según su fórmula geométrica.  
+  Este ejercicio demuestra <strong>abstracción y reutilización</strong>.</p>
+</section>
+
+</body>
+</html>
