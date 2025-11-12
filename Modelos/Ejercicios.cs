@@ -4,14 +4,25 @@ namespace TallerPOO.Modelos
     public static class Ejercicios
     {
         public static void Ejercicio1()
-        {
-            Persona p1 = new Persona { Nombre = "Ana", Edad = 20 };
-            Persona p2 = new Persona { Nombre = "Luis", Edad = 22 };
+        {   
+            // Sin constructor
+            // Inicialización con atributos de clase
+            Persona p1 = new Persona {
+                Nombre = "Ana",
+                Edad = 20
+            };
+            Persona p2 = new Persona {
+                Nombre = "Luis",
+                Edad = 22
+            };
             p1.Saludar(); p2.Saludar();
         }
 
         public static void Ejercicio2()
-        {
+        {   
+            // Con constructor
+            // Inicialización mediante constructor, usando parámetros
+            // Primer parametro: nombre, segundo parámetro: edad
             Persona p1 = new Persona("Ana", 20);
             Persona p2 = new Persona("Luis", 22);
             p1.Saludar(); p2.Saludar();
@@ -46,7 +57,8 @@ namespace TallerPOO.Modelos
             Console.WriteLine($"3 + 5 = {calc.Sumar(3,5)}");
             Console.WriteLine($"10 - 4 = {calc.Restar(10,4)}");
             Console.WriteLine($"6 * 7 = {calc.Multiplicar(6,7)}");
-            try { Console.WriteLine($"10 / 0 = {calc.Dividir(10,0)}"); }
+            try { Console.WriteLine($"10 / 0 = {calc.Dividir(10, 0)}"); }
+            // 4 operaciones realizadas, contador esta en 4
             catch (Exception ex) { Console.WriteLine($"Error: {ex.Message}"); }
             Console.WriteLine($"Operaciones realizadas: {CalculadoraBasica.ConteoOperaciones}");
         }
@@ -58,6 +70,10 @@ namespace TallerPOO.Modelos
             CalculadoraBasica c = new CalculadoraBasica();
             c.Sumar(1, 2);
             c.Multiplicar(3, 4);
+            CalculadoraBasica c2 = new CalculadoraBasica();
+            c2.Restar(10, 5);
+            c2.Dividir(20, 4);
+            // Muestra 4, ya que el contador es estático y se comparte entre todas las instancias
             Console.WriteLine($"Operaciones realizadas: {CalculadoraBasica.ConteoOperaciones}");
         }
 
@@ -73,23 +89,34 @@ namespace TallerPOO.Modelos
         // === 8) Polimorfismo con virtual/override ===
         public static void Ejercicio8()
         {
-            var lista = new System.Collections.Generic.List<Vehiculo>
-            {
-                new Auto{Marca="Ford", Puertas=4},
-                new Bicicleta{Marca="GW", TieneCanastilla=true}
-            };
-            foreach (var v in lista) Console.WriteLine(v.Describir());
+
+            Auto ford = new Auto { Marca = "Ford", Puertas = 4 };
+            Bicicleta gw = new Bicicleta { Marca = "GW", TieneCanastilla = true };
+
+            // Cada objeto usa su propia versión del método Describir
+            // que fue sobrescrito con override
+            Console.WriteLine(ford.Describir());
+            Console.WriteLine(gw.Describir());
         }
 
         // === 9) Interfaz INotificable ===
         public static void Ejercicio9()
         {
+            // Método que usa la interfaz INotificable
+            // La interfaz permite usar diferentes implementaciones
             void Avisar(INotificable canal, string cliente)
-                => canal.Enviar($"Pedido listo para {cliente}");
+            {
+                string mensaje = $"Pedido listo para {cliente}";
+                canal.Enviar(mensaje);
+            }
             Avisar(new NotificadorEmail(), "Ana");
             Avisar(new NotificadorSms(), "Luis");
         }
 
+        /// <summary>
+        /// HASTA AQUI LLEGO EL ESTUDIO jaja SAlUDOS
+        /// </summary>
+        
         // === 10) Clase abstracta: Figura ===
         public static void Ejercicio10()
         {
